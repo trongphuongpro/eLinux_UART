@@ -8,14 +8,10 @@ set(CMAKE_CXX_COMPILER arm-g++)
 set(CMAKE_C_COMPILER arm-gcc)
 #-----------------------------------------------------------------------------#
 
-add_subdirectory()
+set(TARGET uart)
 
-set(TARGET **target filename**)
-
-add_executable(${TARGET} **source files**)
-add_library(${TARGET} STATIC **source files**)
-target_link_libraries(${TARGET} **lib**)
-target_include_directories(${TARGET} PUBLIC **dirs**)
+add_library(${TARGET} STATIC src/uart.cpp)
+target_include_directories(${TARGET} PUBLIC include/uart.h)
 
 #-----------------------------------------------------------------------------#
 target_compile_options(${TARGET} PUBLIC -std=gnu++11
@@ -24,4 +20,4 @@ target_compile_options(${TARGET} PUBLIC -std=gnu++11
 										-O2
 )
 #-----------------------------------------------------------------------------#
-#install(TARGETS ${TARGET} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+install(TARGETS ${TARGET} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin)
