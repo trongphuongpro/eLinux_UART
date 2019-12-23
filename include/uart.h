@@ -17,8 +17,8 @@ public:
 	int write(uint8_t);
 	int writeBuffer(const void*, uint32_t);
 
-	uint8_t uart_read(void);
-	int uart_readBuffer(void*, uint32_t);
+	uint8_t read();
+	int readBuffer(void*, uint32_t);
 
 
 private:

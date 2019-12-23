@@ -12,10 +12,6 @@ using namespace std;
 using namespace BBB;
 
 
-#define BAUD(rate)	B##rate
-#define CS(size)	CS##size
-
-
 UART::UART(UART::PORT port, int baudrate, uint8_t datasize) {
 	this->port = port;
 	this->baudrate = baudrate;
@@ -42,8 +38,9 @@ int UART::open() {
 	struct termios options;
 
 	tcgetattr(this->file, &options);
-	options.c_cflag = this->baudrate | this->datasize | CREAD | CLOCAL;
+	options.c_cflag = B9600 | CS8 | CREAD | CLOCAL;
 	options.c_iflag = IGNPAR | ICRNL;
+
 	tcflush(this->file, TCIFLUSH);
 	tcsetattr(this->file, TCSANOW, &options);
 
@@ -72,4 +69,15 @@ int UART::writeBuffer(const void* buffer, uint32_t len) {
 		return -1;
 	}
 	return 0;
+}
+
+
+uint8_t UART::read() {
+	uint8_t data;
+
+	if (::read(this->file, &data, 1) < 0) {
+		perror("UART: Failed to read from the input");
+		return 255;
+	}
+	return data;
 }
