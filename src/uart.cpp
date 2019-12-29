@@ -1,3 +1,12 @@
+/** 
+ * @file uart.cpp
+ * @brief This file contains implementation for class UART 
+ * - a wrapper for Linux's UART C-library
+ * @author Nguyen Trong Phuong (aka trongphuongpro)
+ * @date December 29, 2019
+ */
+
+
 #include <stdio.h>
 #include <stdint.h>
 #include <errno.h>
