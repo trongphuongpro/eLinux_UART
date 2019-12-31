@@ -52,7 +52,7 @@ public:
 	/**
 	 * @brief Transmit one byte via UART bus
 	 * @param data one byte data.
-	 * @return nothing.
+	 * @return 0: OK, 1: Error.
 	 */
 	int write(uint8_t data);
 
@@ -61,7 +61,7 @@ public:
  	 * @brief Transmit a byte array via UART bus
  	 * @param data pointer to data.
  	 * @param len the length of data in byte.
- 	 * @return nothing.
+ 	 * @return 0: OK, 1: Error.
  	 */
 	int writeBuffer(const void* data, uint32_t len);
 
@@ -70,15 +70,14 @@ public:
 	 * @brief Get one byte from UART bus
 	 * @return one byte.
 	 */
-	uint8_t read();
+	int read();
 
 
 	/** 
 	 * @brief Get one byte from UART bus
 	 * @param data pointer to RX buffer;
 	 * @parem the number of bytes will be received.
-	 * @return 0: OK;
-	 * @return -1: Error.
+	 * @return 0: OK, -1: Error.
 	 */	
 	int readBuffer(void* data, uint32_t len);
 
@@ -86,13 +85,13 @@ public:
 private:
 
 	/** 
-	 * Name of UART character file
+	 * Name of UART character device file
 	 */
 	std::string filename;
 
 
 	/** 
-	 * File descriptor of UART character file
+	 * File descriptor of UART character device file
 	 */
 	int file;
 
@@ -116,7 +115,7 @@ private:
 
 
 	/** 
-	 * @brief Open UART character file 
+	 * @brief Open UART character device file 
 	 * and setup baudrate, datasize
 	 * @return 0: OK;
 	 * @return -1: Error.
@@ -125,7 +124,7 @@ private:
 
 
 	/** 
-	 * @brief Close UART character file 
+	 * @brief Close UART character device file 
 	 * @return nothing.
 	 */		
 	void close();

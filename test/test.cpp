@@ -30,23 +30,21 @@ int main(int argc, const char** argv) {
 
 	UART bus(UART::UART1, 9600);
 
-	const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
-						"codelungtung", "uart testing"};
+	//const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
+	//					"codelungtung", "uart testing"};
+
+	uint8_t buffer[100];
 	
+	puts("Reading test");
 	while (1) {
-		puts("sending...");
+		int ret = bus.readBuffer(buffer, 100);
 
-		for (int i = 0; i < 4; i++) {
-			sendMessage(bus, preamble_1, s[i], strlen(s[i]));
-			sleep(1);
+		if (ret != -1) {
+			buffer[ret] = '\0';
+			printf("recv: %s\n", buffer);
 		}
 
-		for (int i = 0; i < 4; i++) {
-			sendMessage(bus, preamble_2, s[i], strlen(s[i]));
-			sleep(1);
-		}
-
-		puts("----");
-		sleep(3);
+		//bus.writeBuffer("Hello guys", 10);
+		//sleep(1);
 	}
 }

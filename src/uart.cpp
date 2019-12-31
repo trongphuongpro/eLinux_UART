@@ -1,7 +1,7 @@
 /** 
  * @file uart.cpp
- * @brief This file contains implementation for class UART 
- * - a wrapper for Linux's UART C-library
+ * @brief This file contains implementation for class UART - a wrapper for
+ * Linux's UART C-library
  * @author Nguyen Trong Phuong (aka trongphuongpro)
  * @date December 29, 2019
  */
@@ -47,8 +47,13 @@ int UART::open() {
 	struct termios options;
 
 	tcgetattr(this->file, &options);
-	options.c_cflag = B9600 | CS8 | CREAD | CLOCAL;
+	options.c_cflag = CS8 | CREAD | CLOCAL;
 	options.c_iflag = IGNPAR | ICRNL;
+
+	options.c_lflag &= ~(ECHO | ECHONL | ICANON | IEXTEN | ISIG);
+
+	cfsetispeed(&options, B9600);
+	cfsetospeed(&options, B9600);
 
 	tcflush(this->file, TCIFLUSH);
 	tcsetattr(this->file, TCSANOW, &options);
@@ -64,29 +69,45 @@ void UART::close() {
 
 
 int UART::write(uint8_t data) {
-	if (::write(this->file, &data, 1) < 0) {
+	int ret;
+
+	if ((ret=::write(this->file, &data, 1)) < 0) {
 		perror("UART: Failed to write to the output");
-		return -1;
 	}
-	return 0;
+
+	return ret;
 }
 
 
 int UART::writeBuffer(const void* buffer, uint32_t len) {
-	if (::write(this->file, buffer, len) < 0) {
+	int ret;
+
+	if ((ret=::write(this->file, buffer, len)) < 0) {
 		perror("UART: Failed to write to the output");
-		return -1;
 	}
-	return 0;
+
+	return ret;
 }
 
 
-uint8_t UART::read() {
+int UART::read() {
 	uint8_t data;
 
 	if (::read(this->file, &data, 1) < 0) {
-		perror("UART: Failed to read from the input");
-		return 255;
+		//perror("UART: Failed to read from the input");
+		return -1;
 	}
+
 	return data;
+}
+
+
+int UART::readBuffer(void* buffer, uint32_t len) {
+	int ret;
+
+	if ((ret=::read(this->file, buffer, len)) < 0) {
+		//perror("UART: Failed to read from the input");
+	}
+
+	return ret;
 }
