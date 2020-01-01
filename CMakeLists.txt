@@ -11,6 +11,7 @@ set(CMAKE_C_COMPILER arm-linux-gcc)
 set(TARGET uart)
 
 add_library(${TARGET} STATIC src/uart.cpp)
+target_link_libraries(${TARGET} ${CMAKE_THREAD_LIBS_INIT})
 target_include_directories(${TARGET} PUBLIC include)
 
 #-----------------------------------------------------------------------------#

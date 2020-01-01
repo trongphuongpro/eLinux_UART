@@ -20,6 +20,7 @@
  */
 namespace BBB {
 
+typedef void (*CallbackType)(void*);
 
 /**
  * @brief Class UART contains functions and variables
@@ -82,6 +83,15 @@ public:
 	int readBuffer(void* data, uint32_t len);
 
 
+	/**
+	 * @brief Callback for incoming data
+	 * @param callback callback function name;
+	 * @param arg argument of callback function.
+	 * @return nothing.
+	 */
+	void onReceiveData(void (*callback)(void*), void *arg=NULL);
+
+
 private:
 
 	/** 
@@ -113,6 +123,37 @@ private:
 	 */
 	PORT port;
 
+	
+	/**
+	 * @brief Polling for incoming data
+	 * @return 0: OK, -1: Error.
+	 */
+	int waitData();
+
+
+	/**
+	 * state of thread
+	 */
+	bool threadRunning;
+
+
+	/**
+	 * callback function on incoming data
+	 */
+	CallbackType callbackFunction;
+
+
+	/**
+	 * argument for callback function
+	 */
+	void* callbackArgument;
+
+
+	/**
+	 * thread ID
+	 */
+	pthread_t thread;
+
 
 	/** 
 	 * @brief Open UART character device file 
@@ -128,7 +169,19 @@ private:
 	 * @return nothing.
 	 */		
 	void close();
+
+
+	/**
+	 * @brief Friend function used for multi-threading
+	 * @param value void pointer to argument
+	 * @return NULL
+	 */
+	friend void *threadedPoll(void* arg);
+	
 };
+
+
+void *threadedPoll(void* arg);
 
 } /* namespace BBB */
 
