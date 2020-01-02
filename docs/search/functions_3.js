@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7euart_21',['~UART',['../classBBB_1_1UART.html#a79aea29bd989d2e2ce9692042375b83e',1,'BBB::UART']]]
+  ['uart_27',['UART',['../classBBB_1_1UART.html#ae46d13c84a58f060e4727f9fed392504',1,'BBB::UART']]]
 ];

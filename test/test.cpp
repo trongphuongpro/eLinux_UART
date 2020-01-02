@@ -24,27 +24,27 @@ void sendMessage(UART& bus, const void* preamble, const void* data, uint32_t len
 }
 
 
+void printData(void* arg) {
+	UART* bus = static_cast<UART*>(arg);
+
+	printf(">> %c\n", bus->read());
+}
+
+
 int main(int argc, const char** argv) {
 
 	crc32_init();
 
 	UART bus(UART::UART1, 9600);
+	bus.onReceiveData(printData);
 
 	//const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
 	//					"codelungtung", "uart testing"};
 
-	uint8_t buffer[100];
+	//uint8_t buffer[100];
 	
 	puts("Reading test");
 	while (1) {
-		int ret = bus.readBuffer(buffer, 100);
-
-		if (ret != -1) {
-			buffer[ret] = '\0';
-			printf("recv: %s\n", buffer);
-		}
-
-		//bus.writeBuffer("Hello guys", 10);
-		//sleep(1);
+		
 	}
 }

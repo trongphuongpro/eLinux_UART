@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['port_1',['PORT',['../classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed',1,'BBB::UART']]]
+  ['callbacktype_1',['CallbackType',['../namespaceBBB.html#a32bca02b46577bc237c36621e5688c0a',1,'BBB']]]
 ];

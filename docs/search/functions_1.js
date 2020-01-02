@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uart_18',['UART',['../classBBB_1_1UART.html#acd967840b224dd6669fcdef545b9ec70',1,'BBB::UART']]]
+  ['read_24',['read',['../classBBB_1_1UART.html#aef18d2b479fcd1e3a25a31ac1e52c6d0',1,'BBB::UART']]],
+  ['readbuffer_25',['readBuffer',['../classBBB_1_1UART.html#a1215c588e9626bc2cc825b34c9a03c8c',1,'BBB::UART']]]
 ];

@@ -20,7 +20,12 @@
  */
 namespace BBB {
 
+
+/**
+ * @brief pointer type for callback function
+ */
 typedef void (*CallbackType)(void*);
+
 
 /**
  * @brief Class UART contains functions and variables
@@ -32,11 +37,15 @@ public:
 	/**
 	 * @brief enum PORT contains number of UART bus.
 	 */
-	enum PORT {UART1=1, UART2=2, UART4=4, UART5=5};
+	enum PORT {	UART1=1, /**< ttyS1 */
+				UART2=2, /**< ttyS2 */
+				UART4=4, /**< ttyS4 */
+				UART5=5 /**< ttyS5 */
+		};
 
 
 	/**
-	 * Constructor
+	 * @brief Constructor
 	 * @param bus UART bus number;
 	 * @param baudrate UART baudrate;
 	 * @param bit data size: 5,6,7 or 8 bit
@@ -45,7 +54,7 @@ public:
 
 
 	/**
-	 * Destructor
+	 * @brief Destructor
 	 */
 	~UART();
 
@@ -53,7 +62,7 @@ public:
 	/**
 	 * @brief Transmit one byte via UART bus
 	 * @param data one byte data.
-	 * @return 0: OK, 1: Error.
+	 * @return 0: OK, -1: Error.
 	 */
 	int write(uint8_t data);
 
@@ -62,7 +71,7 @@ public:
  	 * @brief Transmit a byte array via UART bus
  	 * @param data pointer to data.
  	 * @param len the length of data in byte.
- 	 * @return 0: OK, 1: Error.
+ 	 * @return 0: OK, -1: Error.
  	 */
 	int writeBuffer(const void* data, uint32_t len);
 
@@ -84,75 +93,34 @@ public:
 
 
 	/**
-	 * @brief Callback for incoming data
+	 * @brief Add callback for incoming data
 	 * @param callback callback function name;
 	 * @param arg argument of callback function.
 	 * @return nothing.
 	 */
-	void onReceiveData(void (*callback)(void*), void *arg=NULL);
+	void onReceiveData(CallbackType callback, void *arg=NULL);
 
 
 private:
 
-	/** 
-	 * Name of UART character device file
-	 */
-	std::string filename;
+	std::string filename; /**< Name of UART character device file */
+	int file; /**< File descriptor of UART character device file */
 
+	int baudrate; /**< UART baudrate */
+	uint8_t datasize; /**< UART datasize */
+	PORT port; /**< UART bus number */
 
-	/** 
-	 * File descriptor of UART character device file
-	 */
-	int file;
-
-
-	/** 
-	 * UART baudrate
-	 */
-	int baudrate;
-
-
-	/** 
-	 * UART datasize
-	 */
-	uint8_t datasize;
-
-
-	/** 
-	 * UART bus number
-	 */
-	PORT port;
-
+	bool threadRunning; /**< state of thread, running or not */
+	CallbackType callbackFunction; /**< callback function on incoming data */
+	void* callbackArgument; /**< argument for callback function */
+	pthread_t thread; /**< thread ID */
 	
+
 	/**
 	 * @brief Polling for incoming data
 	 * @return 0: OK, -1: Error.
 	 */
 	int waitData();
-
-
-	/**
-	 * state of thread
-	 */
-	bool threadRunning;
-
-
-	/**
-	 * callback function on incoming data
-	 */
-	CallbackType callbackFunction;
-
-
-	/**
-	 * argument for callback function
-	 */
-	void* callbackArgument;
-
-
-	/**
-	 * thread ID
-	 */
-	pthread_t thread;
 
 
 	/** 

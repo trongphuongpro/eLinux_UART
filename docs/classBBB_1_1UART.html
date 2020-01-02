@@ -67,7 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">BBB::UART Class Reference</div>  </div>
 </div><!--header-->
@@ -80,44 +81,83 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac5dda8663f95228e8336a769361252ed"><td class="memItemLeft" align="right" valign="top"><a id="ac5dda8663f95228e8336a769361252ed"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">PORT</a> { <b>UART1</b> =1, 
-<b>UART2</b> =2, 
-<b>UART4</b> =4, 
-<b>UART5</b> =5
+<tr class="memitem:ac5dda8663f95228e8336a769361252ed"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">PORT</a> { <a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252edab9c9347b2ef62b3c39dba63ba89fe2da">UART1</a> =1, 
+<a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252eda23c5be822854fe174064feed17e64aa4">UART2</a> =2, 
+<a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252eda085d90c7e7c4018aab0548e7cd4364eb">UART4</a> =4, 
+<a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252edac39ea169d6f1fcb846d598f5dc58689b">UART5</a> =5
  }</td></tr>
-<tr class="memdesc:ac5dda8663f95228e8336a769361252ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum PORT contains number of <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus. <br /></td></tr>
+<tr class="memdesc:ac5dda8663f95228e8336a769361252ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum PORT contains number of <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">More...</a><br /></td></tr>
 <tr class="separator:ac5dda8663f95228e8336a769361252ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acd967840b224dd6669fcdef545b9ec70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#acd967840b224dd6669fcdef545b9ec70">UART</a> (<a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">PORT</a> bus, int baudrate, uint8_t bit=8)</td></tr>
-<tr class="separator:acd967840b224dd6669fcdef545b9ec70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79aea29bd989d2e2ce9692042375b83e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a79aea29bd989d2e2ce9692042375b83e">~UART</a> ()</td></tr>
-<tr class="separator:a79aea29bd989d2e2ce9692042375b83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a809407a54645361f1329fd7d600d05f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a809407a54645361f1329fd7d600d05f2">write</a> (uint8_t data)</td></tr>
-<tr class="memdesc:a809407a54645361f1329fd7d600d05f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit one byte via <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a809407a54645361f1329fd7d600d05f2">More...</a><br /></td></tr>
-<tr class="separator:a809407a54645361f1329fd7d600d05f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d844c05a3b58d2724bfb4c6fa44717"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a11d844c05a3b58d2724bfb4c6fa44717">writeBuffer</a> (const void *data, uint32_t len)</td></tr>
-<tr class="memdesc:a11d844c05a3b58d2724bfb4c6fa44717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a byte array via <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a11d844c05a3b58d2724bfb4c6fa44717">More...</a><br /></td></tr>
-<tr class="separator:a11d844c05a3b58d2724bfb4c6fa44717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0828e425498141590bf5bd7915f6db14"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a0828e425498141590bf5bd7915f6db14">read</a> ()</td></tr>
-<tr class="memdesc:a0828e425498141590bf5bd7915f6db14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get one byte from <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a0828e425498141590bf5bd7915f6db14">More...</a><br /></td></tr>
-<tr class="separator:a0828e425498141590bf5bd7915f6db14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46d13c84a58f060e4727f9fed392504"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#ae46d13c84a58f060e4727f9fed392504">UART</a> (<a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">PORT</a> bus, int baudrate, uint8_t bit=8)</td></tr>
+<tr class="memdesc:ae46d13c84a58f060e4727f9fed392504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classBBB_1_1UART.html#ae46d13c84a58f060e4727f9fed392504">More...</a><br /></td></tr>
+<tr class="separator:ae46d13c84a58f060e4727f9fed392504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadddcbbe3d4b65d13c2e92cce5a04c32"><td class="memItemLeft" align="right" valign="top"><a id="aadddcbbe3d4b65d13c2e92cce5a04c32"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#aadddcbbe3d4b65d13c2e92cce5a04c32">~UART</a> ()</td></tr>
+<tr class="memdesc:aadddcbbe3d4b65d13c2e92cce5a04c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:aadddcbbe3d4b65d13c2e92cce5a04c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074f0809e486816702e432c13b5ddf56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a074f0809e486816702e432c13b5ddf56">write</a> (uint8_t data)</td></tr>
+<tr class="memdesc:a074f0809e486816702e432c13b5ddf56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit one byte via <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a074f0809e486816702e432c13b5ddf56">More...</a><br /></td></tr>
+<tr class="separator:a074f0809e486816702e432c13b5ddf56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4521e2ba2f56c25b2d6288d7587bc025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a4521e2ba2f56c25b2d6288d7587bc025">writeBuffer</a> (const void *data, uint32_t len)</td></tr>
+<tr class="memdesc:a4521e2ba2f56c25b2d6288d7587bc025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a byte array via <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a4521e2ba2f56c25b2d6288d7587bc025">More...</a><br /></td></tr>
+<tr class="separator:a4521e2ba2f56c25b2d6288d7587bc025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef18d2b479fcd1e3a25a31ac1e52c6d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#aef18d2b479fcd1e3a25a31ac1e52c6d0">read</a> ()</td></tr>
+<tr class="memdesc:aef18d2b479fcd1e3a25a31ac1e52c6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get one byte from <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#aef18d2b479fcd1e3a25a31ac1e52c6d0">More...</a><br /></td></tr>
+<tr class="separator:aef18d2b479fcd1e3a25a31ac1e52c6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1215c588e9626bc2cc825b34c9a03c8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a1215c588e9626bc2cc825b34c9a03c8c">readBuffer</a> (void *data, uint32_t len)</td></tr>
 <tr class="memdesc:a1215c588e9626bc2cc825b34c9a03c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get one byte from <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus.  <a href="classBBB_1_1UART.html#a1215c588e9626bc2cc825b34c9a03c8c">More...</a><br /></td></tr>
 <tr class="separator:a1215c588e9626bc2cc825b34c9a03c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a58d9e33ee62ccdcfb3afe0703024d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#a64a58d9e33ee62ccdcfb3afe0703024d">onReceiveData</a> (<a class="el" href="namespaceBBB.html#a32bca02b46577bc237c36621e5688c0a">CallbackType</a> callback, void *arg=NULL)</td></tr>
+<tr class="memdesc:a64a58d9e33ee62ccdcfb3afe0703024d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add callback for incoming data.  <a href="classBBB_1_1UART.html#a64a58d9e33ee62ccdcfb3afe0703024d">More...</a><br /></td></tr>
+<tr class="separator:a64a58d9e33ee62ccdcfb3afe0703024d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:acb5bc6f758ae2829d8af332e857f350e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBBB_1_1UART.html#acb5bc6f758ae2829d8af332e857f350e">threadedPoll</a> (void *arg)</td></tr>
+<tr class="memdesc:acb5bc6f758ae2829d8af332e857f350e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Friend function used for multi-threading.  <a href="classBBB_1_1UART.html#acb5bc6f758ae2829d8af332e857f350e">More...</a><br /></td></tr>
+<tr class="separator:acb5bc6f758ae2829d8af332e857f350e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> contains functions and variables using for <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> communication. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acd967840b224dd6669fcdef545b9ec70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd967840b224dd6669fcdef545b9ec70">&#9670;&nbsp;</a></span>UART()</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ac5dda8663f95228e8336a769361252ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dda8663f95228e8336a769361252ed">&#9670;&nbsp;</a></span>PORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UART::UART </td>
+          <td class="memname">enum <a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">BBB::UART::PORT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>enum PORT contains number of <a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac5dda8663f95228e8336a769361252edab9c9347b2ef62b3c39dba63ba89fe2da"></a>UART1&#160;</td><td class="fielddoc"><p>ttyS1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5dda8663f95228e8336a769361252eda23c5be822854fe174064feed17e64aa4"></a>UART2&#160;</td><td class="fielddoc"><p>ttyS2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5dda8663f95228e8336a769361252eda085d90c7e7c4018aab0548e7cd4364eb"></a>UART4&#160;</td><td class="fielddoc"><p>ttyS4 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5dda8663f95228e8336a769361252edac39ea169d6f1fcb846d598f5dc58689b"></a>UART5&#160;</td><td class="fielddoc"><p>ttyS5 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae46d13c84a58f060e4727f9fed392504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46d13c84a58f060e4727f9fed392504">&#9670;&nbsp;</a></span>UART()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BBB::UART::UART </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classBBB_1_1UART.html#ac5dda8663f95228e8336a769361252ed">UART::PORT</a>&#160;</td>
           <td class="paramname"><em>port</em>, </td>
@@ -141,7 +181,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bus</td><td><a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> bus number; </td></tr>
     <tr><td class="paramname">baudrate</td><td><a class="el" href="classBBB_1_1UART.html" title="Class UART contains functions and variables using for UART communication.">UART</a> baudrate; </td></tr>
@@ -152,33 +194,53 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a79aea29bd989d2e2ce9692042375b83e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79aea29bd989d2e2ce9692042375b83e">&#9670;&nbsp;</a></span>~UART()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a64a58d9e33ee62ccdcfb3afe0703024d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a58d9e33ee62ccdcfb3afe0703024d">&#9670;&nbsp;</a></span>onReceiveData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UART::~UART </td>
+          <td class="memname">void BBB::UART::onReceiveData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespaceBBB.html#a32bca02b46577bc237c36621e5688c0a">CallbackType</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Destructor </p>
+
+<p>Add callback for incoming data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>callback function name; </td></tr>
+    <tr><td class="paramname">arg</td><td>argument of callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0828e425498141590bf5bd7915f6db14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0828e425498141590bf5bd7915f6db14">&#9670;&nbsp;</a></span>read()</h2>
+<a id="aef18d2b479fcd1e3a25a31ac1e52c6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef18d2b479fcd1e3a25a31ac1e52c6d0">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t UART::read </td>
+          <td class="memname">int BBB::UART::read </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -224,20 +286,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0: OK; </dd>
-<dd>
--1: Error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0: OK, -1: Error. </dd></dl>
 
 </div>
 </div>
-<a id="a809407a54645361f1329fd7d600d05f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a809407a54645361f1329fd7d600d05f2">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a074f0809e486816702e432c13b5ddf56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074f0809e486816702e432c13b5ddf56">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int UART::write </td>
+          <td class="memname">int BBB::UART::write </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -253,18 +313,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0: OK, -1: Error. </dd></dl>
 
 </div>
 </div>
-<a id="a11d844c05a3b58d2724bfb4c6fa44717"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11d844c05a3b58d2724bfb4c6fa44717">&#9670;&nbsp;</a></span>writeBuffer()</h2>
+<a id="a4521e2ba2f56c25b2d6288d7587bc025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4521e2ba2f56c25b2d6288d7587bc025">&#9670;&nbsp;</a></span>writeBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int UART::writeBuffer </td>
+          <td class="memname">int BBB::UART::writeBuffer </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -291,7 +351,43 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0: OK, -1: Error. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="acb5bc6f758ae2829d8af332e857f350e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb5bc6f758ae2829d8af332e857f350e">&#9670;&nbsp;</a></span>threadedPoll</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* threadedPoll </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Friend function used for multi-threading. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>void pointer to argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
 
 </div>
 </div>

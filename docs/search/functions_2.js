@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['write_19',['write',['../classBBB_1_1UART.html#a809407a54645361f1329fd7d600d05f2',1,'BBB::UART']]],
-  ['writebuffer_20',['writeBuffer',['../classBBB_1_1UART.html#a11d844c05a3b58d2724bfb4c6fa44717',1,'BBB::UART']]]
+  ['threadedpoll_26',['threadedPoll',['../namespaceBBB.html#a0e4eb0970c016bdcf24513b5ec2cd11a',1,'BBB']]]
 ];
