@@ -64,7 +64,7 @@ public:
 	 * @param data one byte data.
 	 * @return 0: OK, -1: Error.
 	 */
-	int write(uint8_t data);
+	virtual int write(uint8_t data);
 
 
 	/**
@@ -73,14 +73,14 @@ public:
  	 * @param len the length of data in byte.
  	 * @return 0: OK, -1: Error.
  	 */
-	int writeBuffer(const void* data, uint32_t len);
+	virtual int writeBuffer(const void* data, uint32_t len);
 
 
 	/** 
 	 * @brief Get one byte from UART bus
 	 * @return one byte.
 	 */
-	int read();
+	virtual int read();
 
 
 	/** 
@@ -89,7 +89,7 @@ public:
 	 * @parem the number of bytes will be received.
 	 * @return 0: OK, -1: Error.
 	 */	
-	int readBuffer(void* data, uint32_t len);
+	virtual int readBuffer(void* data, uint32_t len);
 
 
 	/**
@@ -98,7 +98,7 @@ public:
 	 * @param arg argument of callback function.
 	 * @return nothing.
 	 */
-	void onReceiveData(CallbackType callback, void *arg=NULL);
+	virtual void onReceiveData(CallbackType callback, void *arg=NULL);
 
 
 private:

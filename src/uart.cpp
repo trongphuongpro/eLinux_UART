@@ -118,34 +118,39 @@ int UART::readBuffer(void* buffer, uint32_t len) {
 
 
 int UART::waitData() {
-	int i, epollfd;
-	struct epoll_event ev;
+	int nr_events, epollfd;
+	struct epoll_event event;
 
-	epollfd = epoll_create(1);
+	epollfd = epoll_create1(EPOLL_CLOEXEC);
 
 	if (epollfd < 0) {
 		perror("UART: Failed to create epollfd");
 		return -1;
 	}
 
-	ev.events = EPOLLIN | EPOLLET | EPOLLPRI;
-	ev.data.fd = this->file;
+	event.events = EPOLLIN | EPOLLET | EPOLLPRI;
+	event.data.fd = this->file;
 
-	if (epoll_ctl(epollfd, EPOLL_CTL_ADD, this->file, &ev) == -1) {
+	if (epoll_ctl(epollfd, EPOLL_CTL_ADD, this->file, &event) == -1) {
 		perror("UART: Failed to add control interface");
+		::close(epollfd);
+
 		return -1;
 	}
 
 
-	i = epoll_wait(epollfd, &ev, 1, -1);
+	nr_events = epoll_wait(epollfd, &event, 1, -1);
 
-	if (i == -1) {
+	if (nr_events == -1) {
 		perror("GPIO: Poll Wait fail");
+		::close(epollfd);
+
 		return -1;
 	}
+
+	::close(epollfd);
 
 	return 0;
-
 }
 
 
