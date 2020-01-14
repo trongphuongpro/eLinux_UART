@@ -98,7 +98,7 @@ public:
 	 * @param arg argument of callback function.
 	 * @return nothing.
 	 */
-	virtual void onReceiveData(CallbackType callback, void *arg=NULL);
+	virtual void onReceiveData(CallbackType callback, void *arg);
 
 
 private:
