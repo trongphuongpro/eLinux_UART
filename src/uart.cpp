@@ -159,7 +159,7 @@ void *threadedPoll(void* arg) {
 
 	while (bus->threadRunning) {
 		if (bus->waitData() == 0) {
-			bus->callbackFunction(bus);
+			bus->callbackFunction(bus->callbackArgument);
 		}
 	}
 

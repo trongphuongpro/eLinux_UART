@@ -33,10 +33,8 @@ void printData(void* arg) {
 
 int main(int argc, const char** argv) {
 
-	crc32_init();
-
 	UART bus(UART::UART1, 9600);
-	bus.onReceiveData(printData);
+	bus.onReceiveData(printData, &bus);
 
 	//const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
 	//					"codelungtung", "uart testing"};
