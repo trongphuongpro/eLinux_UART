@@ -14,12 +14,12 @@ uint8_t preamble_2[4] = {0xAB, 0xBC, 0xCD, 0xDE};
 void sendMessage(UART& bus, const void* preamble, const void* data, uint32_t len) {
 	crc32_t checksum = crc32_compute(data, len);
 
-	bus.writeBuffer(preamble, 4);
-	bus.write(0xAA);
-	bus.write(0xBB);
-	bus.write(len);
-	bus.writeBuffer(data, len);
-	bus.writeBuffer(&checksum, 4);
+	bus.sendBuffer(preamble, 4);
+	bus.send(0xAA);
+	bus.send(0xBB);
+	bus.send(len);
+	bus.sendBuffer(data, len);
+	bus.sendBuffer(&checksum, 4);
 
 }
 
@@ -27,13 +27,13 @@ void sendMessage(UART& bus, const void* preamble, const void* data, uint32_t len
 void printData(void* arg) {
 	UART* bus = static_cast<UART*>(arg);
 
-	printf(">> %c\n", bus->read());
+	printf(">> %c\n", bus->receive());
 }
 
 
 int main(int argc, const char** argv) {
 
-	UART bus(UART::UART1, 9600);
+	UART bus(UART::UART1, B115200);
 	bus.onReceiveData(printData, &bus);
 
 	//const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
