@@ -36,13 +36,17 @@ int main(int argc, const char** argv) {
 	UART bus(UART::UART1, B115200);
 	bus.onReceiveData(printData, &bus);
 
-	//const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
-	//					"codelungtung", "uart testing"};
+	const char* s[4] = {"Hello, this's Beaglebone Black", "trongphuongpro",
+						"codelungtung", "uart testing"};
 
 	//uint8_t buffer[100];
 	
 	puts("Reading test");
+	
 	while (1) {
-		
+		for (int i = 0; i < 4; i++) {
+			bus.sendBuffer(s[i], strlen(s[i]));
+		}
+		sleep(2);
 	}
 }

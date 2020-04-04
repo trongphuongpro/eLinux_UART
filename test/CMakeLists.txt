@@ -11,10 +11,14 @@ set(CMAKE_C_COMPILER arm-linux-gcc)
 set(TARGET testbench)
 
 add_executable(${TARGET} test.cpp ../src/uart.cpp)
-target_link_libraries(${TARGET} /home/trongphuong/Work/BBB/libraries/crc32/bin/libcrc32.a
-				${CMAKE_THREAD_LIBS_INIT})
+
+target_link_libraries(${TARGET} /home/trongphuong/Work/eLinux/BBB/libraries/crc32/bin/libcrc32.a
+				${CMAKE_THREAD_LIBS_INIT}
+)
+
 target_include_directories(${TARGET} PUBLIC ../include
-							/home/trongphuong/Work/BBB/libraries/crc32/include)
+							/home/trongphuong/Work/eLinux/BBB/libraries/crc32/include
+)
 
 #-----------------------------------------------------------------------------#
 target_compile_options(${TARGET} PUBLIC -std=gnu++11
